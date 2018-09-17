@@ -1,3 +1,13 @@
+::selection {
+	background: rgba(0,0,255,0.99);
+	color: white;
+}
+
+mark {
+	background-color: blue;
+	color: white;
+}
+
 section {
 	padding: 160px 0px;
 }
@@ -62,22 +72,24 @@ footer {
 
 
 .link-footer-button:hover {
-	background-color: gray;
-	color: white;
+	background-color: lightgray;
+	text-decoration: underline;
+	color: black;
 }
 
 .link-button {
 	top: 50px;
-	background-color: blue;
-	color: white;
+	border: 1px solid black;
+	color: black;
 	margin-top: 50px;
 	padding: 10px;
+	font-weight: 400;
 }
 
 .link-button:hover {
-	text-decoration: none;
-	opacity: .75;
-	color: white;
+	text-decoration: underline;
+	background-color: lightgray;
+	color: black;
 }
 
 .footer-lists {
