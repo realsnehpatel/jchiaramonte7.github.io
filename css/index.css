@@ -1,0 +1,65 @@
+section {
+	padding: 160px 0px;
+}
+
+hr {
+	background-color: black;
+}
+
+br {
+	height: 40px;
+}
+
+nav {
+	height: 50px;
+}
+
+a {
+	color: blue;
+
+}
+
+a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+header:not(.hero-header) {
+	text-align: center;
+}
+
+footer {
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+
+.link-button {
+	top: 50px;
+	background-color: blue;
+	color: white;
+	margin-top: 50px;
+	padding: 10px;
+}
+
+.link-button:hover {
+	text-decoration: none;
+	opacity: .75;
+	color: white;
+}
+
+.nav-links {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	float: right;
+	padding-top: 12px;
+}
+
+.nav-links li {
+	padding-left: 24px;
+}
