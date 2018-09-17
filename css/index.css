@@ -29,13 +29,41 @@ header:not(.hero-header) {
 }
 
 footer {
+	background-color: white;
 	height: 50px;
 	width: 100%;
 	position: fixed;
 	bottom: 0;
 	border-top: 1px solid black;
+	border-bottom: 1px solid black;
 	display: flex;
 	align-items: center;
+	
+}
+
+.link-footer-button {
+	border: 1px solid black;
+	padding: 15px;
+}
+
+.link-footer-social {
+	padding: 15px 16px;
+	border-left: none;
+}
+
+.link-footer-social img {
+	height: 16px;
+	width: 16px;
+}
+
+.link-footer-social:first-child {
+	
+}
+
+
+.link-footer-button:hover {
+	background-color: gray;
+	color: white;
 }
 
 .link-button {
@@ -52,12 +80,21 @@ footer {
 	color: white;
 }
 
-.nav-links {
+.footer-lists {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer-lists ul li:first-child a {
+	border-left: 1px solid black;
+}
+
+ul {
+	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: flex;
-	float: right;
-	padding-top: 12px;
 }
 
 .nav-links li {
