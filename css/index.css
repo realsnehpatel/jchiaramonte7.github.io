@@ -51,6 +51,10 @@ footer {
 	
 }
 
+p {
+	font-family: adobe garamond pro;
+}
+
 .link-footer-button {
 	border: 1px solid black;
 	padding: 15px;
