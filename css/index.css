@@ -48,7 +48,7 @@ footer {
 	background-color: white;
 	height: 50px;
 	width: 100%;
-	position: fixed;
+	position: relative;
 	bottom: 0;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
