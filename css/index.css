@@ -70,6 +70,12 @@ h1 {
 	font-weight: 800;
 }
 
+@media only screen and (max-width: 600px) {
+    h1 {
+    	font-size: 48px;
+    }
+}
+
 h2 {
 	font-size: 48px;
 	font-weight: 800;
