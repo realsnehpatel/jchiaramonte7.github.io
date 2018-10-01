@@ -1,6 +1,10 @@
 ::selection {
-	background: rgba(0,0,255,0.99);
-	color: white;
+	background: rgb(255, 241, 50, 0.9);
+	color: black;
+}
+
+* {
+	overflow-x: hidden;
 }
 
 body {
