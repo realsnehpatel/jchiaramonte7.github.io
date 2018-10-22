@@ -130,7 +130,8 @@ h2 {
 }
 
 .link-footer-button {
-	border: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 	padding: 15px;
 }
 
@@ -194,6 +195,7 @@ ul {
 .project-img {
 	border: 1px solid lightgray;
 	border-radius: 2px;
+	overflow: hidden;
 }
 
 .project-img:hover {
