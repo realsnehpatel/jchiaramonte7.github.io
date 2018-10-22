@@ -130,8 +130,8 @@ h2 {
 }
 
 .link-footer-button {
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	//border-left: 1px solid black;
+	//border-right: 1px solid black;
 	padding: 15px;
 }
 
@@ -178,7 +178,7 @@ h2 {
 }
 
 .footer-lists ul li:first-child a {
-	border-left: 1px solid black;
+	//border-left: 1px solid black;
 }
 
 ul {
