@@ -1,5 +1,5 @@
 ::selection {
-	background: rgb(255, 241, 50, 0.9);
+	background: lightgray;
 	color: black;
 }
 
@@ -40,6 +40,8 @@ form div label {
 	border: 2px solid black;
 	box-shadow: 0px 2px;
 	background-color: white;
+	margin-top: 16px;
+	padding: 8px 32px;
 }
 
 body {
@@ -63,6 +65,7 @@ section {
 
 hr {
 	background-color: black;
+	height: 2px;
 }
 
 br {
@@ -71,11 +74,6 @@ br {
 
 nav {
 	height: 50px;
-}
-
-a {
-	//color: blue;
-	//font-family: sans-serif;
 }
 
 a:hover {
@@ -91,21 +89,30 @@ footer {
 	background-color: white;
 	height: 50px;
 	width: 100%;
-	position: fixed;
 	bottom: 0;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	border-top: 2px solid black;
+	/*border-bottom: 1px solid black;*/
 	display: flex;
 	align-items: center;
 	
 }
 
 p.quote {
-	font-family: adobe garamond pro, serif;
+	font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    Courier,
+    monospace;
 }
 
 header {
 	padding-bottom: 20px;
+}
+
+#hero {
+	background-color: #FCC4A9;
 }
 
 h1 {
@@ -134,26 +141,6 @@ h2 {
 	color: white;
 }
 
-.redline {
-	//text-shadow: 0px 2px 0px rgba(255, 255, 255, 1);
-	/*-webkit-box-shadow: 0px 2px 0px 0px rgba(255,255,255,1);*/
-	/*
-	text-shadow:
-   	-1px -1px 0 #fff,  
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
-	//text-decoration: underline;
-    //text-decoration-color: red;*/
-    //outline: 2px solid red;
-    position:static;
-    border-bottom: 2px solid red;
-    //-webkit-background-clip: text;
-    z-index: 1;
-    //-webkit-text-stroke: 1px white;
-    //paint-order: stroke fill;
-}
-
 .stroke {
 	position: relative;
 	z-index: 0;
@@ -168,37 +155,9 @@ h2 {
     font-size: 1em;
 }
 
-.link-footer-button {
-	//border-left: 1px solid black;
-	//border-right: 1px solid black;
-	padding: 15px;
-}
-
-.link-footer-social {
-	padding: 15px 16px;
-	border-left: none;
-}
-
-.link-footer-social img {
-	height: 16px;
-	width: 16px;
-}
-
-.link-footer-social:first-child {
-	
-}
-
-
-.link-footer-button:hover {
-	background-color: lightgray;
-	//text-decoration: underline;
-	//color: black;
-}
-
 .link-button {
 	top: 50px;
 	border: 1px solid black;
-	//color: black;
 	margin-top: 50px;
 	padding: 15px;
 	font-weight: 400;
