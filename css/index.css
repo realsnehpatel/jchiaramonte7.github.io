@@ -1,3 +1,8 @@
+@font-face {
+	font-family: Romana;
+	src: url(../fonts/Romana\ BT\ Bold.ttf);
+  }
+
 ::selection {
 	background: lightgray;
 	color: black;
@@ -63,6 +68,12 @@ section {
 	padding: 160px 0px;
 }
 
+@media only screen and (max-width: 1024px) {
+	section {
+		padding: 80px 0px;
+	}
+}
+
 hr {
 	background-color: black;
 	height: 2px;
@@ -83,6 +94,39 @@ a:hover {
 
 header:not(.hero-header) {
 	text-align: center;
+}
+
+.hero-header {
+	padding: 80px 0px;
+	z-index: 2;
+	position: relative;
+}
+
+.hero-img {
+	position: absolute;
+	background-image: url("../img/halftoneherosm.png");
+	background-size: cover;
+	z-index: 1;
+	height: 384px;
+	width: 512px;
+	right: 128px;
+	top: 72px;
+}
+
+@media only screen and (max-width: 1024px) {
+	.hero-header {
+		padding: 40px 0px;
+	}
+	.hero-img {
+		position: initial;
+		z-index: 0;
+		height: 224px;
+		width: 320px;
+	}
+  }
+
+.intro {
+	z-index: 1;
 }
 
 footer {
@@ -112,7 +156,8 @@ header {
 }
 
 #hero {
-	background-color: #FCC4A9;
+	background-color: black;
+	color: white;
 }
 
 h1 {
@@ -134,11 +179,6 @@ h2 {
 .box {
 	height: 50px;
 	border: 1px solid black;
-}
-
-#games {
-	background-color: black;
-	color: white;
 }
 
 .stroke {
@@ -172,11 +212,12 @@ h2 {
 .footer-lists {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
-.footer-lists ul li:first-child a {
-	//border-left: 1px solid black;
+.footer-item {
+	width: 240px;
+	text-align: center;
 }
 
 ul {
@@ -202,4 +243,14 @@ ul {
 
 .project-description {
 	padding: 0px 40px;
+}
+
+h1, h2 {
+	font-family: "Romana";
+}
+
+@media only screen and (max-width: 768px) {
+	.hide-sm {
+		display: none;
+	}
 }
