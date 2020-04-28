@@ -254,3 +254,7 @@ h1, h2 {
 		display: none;
 	}
 }
+
+.cta-form {
+	padding: 8px;
+}
