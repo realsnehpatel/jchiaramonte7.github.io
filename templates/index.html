@@ -2,11 +2,20 @@
 <head>
 	<title>Jeremy Chiaramonte</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+	<link rel="shortcut icon" type="image/png" href="/static/styles/favicon.png"/>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
 	<script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!--
+		this is the format it needs to be in
+		src="{{ url_for('static', filename="js/main_scripts.js")}}" 
+	-->
 </head>
+<!--Note for Jerm: so the two issues are for your main photo, this is due to the picture being in your css and not the html. 
+	I couldn't figure it out how to get the picture to pop up. Second is your script tag for the font for your text, again Im not
+	sure how to translate the line of code into the one below it. The main thing I did for your code is that I reorganized the 
+	file folders because flask is structured in a certain way with cetain file names. 
+-->
 <body>
 	<!--
 	<nav>
@@ -19,7 +28,8 @@
 	-->
 	<section id=hero>
 		<div class="container">
-			<div class="hero-img"></div>
+			<div class="hero-img" style="background:url(../static/styles/img/halftoneherosm.png) center / cover no-repeat;">
+			</div>
 			<div class="hero-header">
 				
 				<div class="intro">
@@ -33,7 +43,7 @@
 				</div>
 					<br>
 					<p>Currently a <b>software engineer</b> focused on frontend web development.</p>
-					<p>Peep my <a class="link" href="resources/resume.pdf">resume</a>, <a class="link" href="https://github.com/JChiaramonte7">github</a>, <a class="link" href="https://www.linkedin.com/in/jeremy-chiaramonte-60a57a9a/">linkedin</a>, or <a class="link" href="#cta">get in touch</a>.</p>
+					<p>Peep my <a class="link" href="../resources/resume.pdf">resume</a>, <a class="link" href="https://github.com/JChiaramonte7">github</a>, <a class="link" href="https://www.linkedin.com/in/jeremy-chiaramonte-60a57a9a/">linkedin</a>, or <a class="link" href="#cta">get in touch</a>.</p>
 				</div>
 			</div>
 		</div>
@@ -51,7 +61,7 @@
 					
 					<br><br>
 					<div class="project-hero project-img">
-						<a href="https://public.tableau.com/profile/jeremy.chiaramonte#!/vizhome/ElectricityCostsNationwide/Sheet1?publish=yes"><img src="img/tableau.png" width="100%" /></a>
+						<a href="https://public.tableau.com/profile/jeremy.chiaramonte#!/vizhome/ElectricityCostsNationwide/Sheet1?publish=yes"><img src="../static/styles/img/tableau.png" width="100%" /></a>
 					</div>
 					<br>
 					<br>
@@ -65,7 +75,7 @@
 
 					<br><br>
 					<div class="project-hero project-img">
-						<a href="http://stockfra.me/"><img src="img/stockframe2.png" width="100%" /></a>
+						<a href="http://stockfra.me/"><img src="../static/styles/img/stockframe2.png" width="100%" /></a>
 					</div>
 					<br>
 					<br>
@@ -106,38 +116,55 @@
 				</h2>
 			</header>
 			<br>
-			<article class="cta-form row justify-content-center">
-				<div class="col-xl-9 col-md-10 col-sm-12 col-xs-12">
-					<form class="contact row">
-						<div class="contact-entry col-md-6">
-							<label for="name">Full Name</label>
-							<input class="contact-input" type="text" id="first" name="user_name" spellcheck="false">
-						 </div>
-						<div class="contact-entry col-md-6">
-							<label for="name">Email</label>
-							<input class="contact-input"type="text" id="name" name="user_name" spellcheck="false">
-						 </div>
-						 <div class="contact-entry col-md-12">
-							<label for="name">Subject</label>
-							<input class="contact-input"type="text" id="name" name="user_name" spellcheck="false">
-						 </div>
-						 <div class="contact-entry col-md-12">
-							<label for="name">Content</label>
-							<textarea class="contact-input contact-content" type="text-area" rows="4" cols="50" id="name" name="user_name"></textarea>
-						 </div>
-						 <div class="contact-entry col-md-12 text-center">
-						 	<button class="contract-submit" type="submit">Send</button>
-						 </div>
+			{% block content %}
+			
+				{% if success %}
+					<p class=pcenter>Thank you for your message. I will get back to you shortly.</p>
+				{% else %}
+				
+					{% for message in form.name.errors %}
+						<div>{{ message }}</div>
+					{% endfor %}
+				
+					{% for message in form.email.errors %}
+						<div>{{ message }}</div>
+					{% endfor %}
+				
+					{% for message in form.subject.errors %}
+						<div>{{ message }}</div>
+					{% endfor %}
+				
+					{% for message in form.message.errors %}
+						<div>{{ message }}</div>
+					{% endfor %}
+				
+					<form class="formcenter" action="{{ url_for('contact') }}" method=post>
+					{{ form.hidden_tag() }}
+				
+					{{ form.name.label }}
+					{{ form.name }}
+				
+					{{ form.email.label }}
+					{{ form.email }}
+				
+					{{ form.subject.label }}
+					{{ form.subject }}
+				
+					{{ form.message.label }}
+					{{ form.message }}
+				
+					{{ form.submit }}
 					</form>
-				</div>
-			</article>
-			<!--<a  class="link-button" href="mailto:jeremychiaramonte@gmail.com" target="_top">jeremychiaramonte@gmail.com</a>-->
+				
+				{% endif %}
+			{% endblock %}
 		</div>
 	</section>
+	
 	<footer>
 		<div class="container footer-lists">
 			<div class="footer-item hide-sm">
-				Made with HTML & CSS
+				Made with HTML & CSS & JS
 			</div>
 			<div class="footer-item hide-sm">
 				042120
